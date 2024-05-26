@@ -199,7 +199,9 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-  return 2;
+  int tmp=((x>>1)&7)+3;
+  tmp=tmp&(1<<3);
+  return !(((x>>4)^3)|tmp);
 }
 /* 
  * conditional - same as x ? y : z 
@@ -209,8 +211,8 @@ int isAsciiDigit(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  
-  return 2;
+  int symbol=!x+0xffffffff;
+  return ~(symbol^0xffffffff)&y+(~(symbol^0)&z);
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -220,7 +222,7 @@ int conditional(int x, int y, int z) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+  return 2; 
 }
 //4
 /* 
@@ -232,6 +234,7 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 4 
  */
 int logicalNeg(int x) {
+
   return 2;
 }
 /* howManyBits - return the minimum number of bits required to represent x in
