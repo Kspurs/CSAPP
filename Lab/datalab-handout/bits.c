@@ -199,14 +199,9 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-<<<<<<< HEAD
   int tmp=((x>>1)&7)+3;
   tmp=tmp&(1<<3);
   return !(((x>>4)^3)|tmp);
-=======
- 
-       	return 2;
->>>>>>> 7b6d85b (merge)
 }
 /* 
  * conditional - same as x ? y : z 
